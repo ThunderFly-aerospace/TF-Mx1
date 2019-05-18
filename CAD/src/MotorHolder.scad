@@ -27,8 +27,10 @@ rotate([90, 0, 0]) {
                 translate([0, pipeInsideRadius/4, -1])
 			cylinder(pipeInsideHeight+2, wireHoleRadius, wireHoleRadius);
             }
-            translate([0, motorPlatformOffset, (motorPlatformLength+pipeInsideHeight)/2])intersection() {
-                    translate([0, -motorPlatformOffset, 0])union() {
+            translate([0, motorPlatformOffset, (motorPlatformLength+pipeInsideHeight)/2])
+		intersection() {
+                    translate([0, -motorPlatformOffset, 0])
+			union() {
                             translate([0, 0, -pipeInsideRadius/2])
 				cylinder(motorPlatformLength+pipeInsideHeight-pipeInsideRadius-global_clearance, pipeInsideRadius-global_clearance, pipeInsideRadius-global_clearance, true);
                             translate([0, 0, (motorPlatformLength+pipeInsideHeight)/2-motorPlatformRadius])
