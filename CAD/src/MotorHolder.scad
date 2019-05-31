@@ -1,14 +1,16 @@
 include <../parameters.scad>;
+include <functions.scad>;
 
 pipeInsideHeight = 20;
 pipeInsideRadius = 13;
 screwHoleHeight = 9;
+screwPipeHoleOffset = 13;
 nutHoleRadius = 5.5;
 pipeNumberHoles = 3;
 wireHoleRadius = 5;
-motorPlatformHeight = 5;
+motorPlatformHeight = 8;
 motorPlatformLength = 30;
-motorPlatformOffset = -2;
+motorPlatformOffset = -4;
 motorPlatformSuppWidth = 3;
 motorPlatformRadius = 15;
 motorScrewSmallRadius = 8;
@@ -68,11 +70,14 @@ difference() {
 	}
 	for(i = [0:pipeNumberHoles])
 		rotate([0, 0, (360/pipeNumberHoles)*i+30])
-			translate([pipeInsideRadius-screwHoleHeight, 0, pipeInsideHeight/2])
+			translate([pipeInsideRadius-screwHoleHeight, 0, pipeInsideHeight-screwPipeHoleOffset])
 				rotate([0, 90, 0])
 					union() {
 						cylinder(screwHoleHeight, M3_screw_diameter/2, M3_screw_diameter/2);
-						translate([-pipeInsideHeight/3, 0, nutHoleRadius])
-							cube([pipeInsideHeight+M3_nut_diameter, M3_nut_diameter, M3_nut_height], true);
+						translate([0, 0, nutHoleRadius])
+						union() {
+							translate([-pipeInsideHeight/2, 0, 0])cube([pipeInsideHeight, M3_nut_diameter, M3_nut_height], true);
+							translate([0, 0, -M3_nut_height/2])rotate([0, 0, 90])hex(M3_nut_diameter, 0.2, M3_nut_height);
+						}
 					}
 }
