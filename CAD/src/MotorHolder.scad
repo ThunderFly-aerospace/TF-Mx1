@@ -7,7 +7,8 @@ screwHoleHeight = 9;
 screwPipeHoleOffset = 13;
 nutHoleRadius = 5.5;
 pipeNumberHoles = 3;
-wireHoleRadius = 5;
+wireHoleRadius = 5.5;
+wireHoleOffset = 2;
 motorPlatformHeight = 8;
 motorPlatformLength = 30;
 motorPlatformOffset = -4;
@@ -25,7 +26,7 @@ difference() {
 	union() {
 	    difference() {
 		cylinder(pipeInsideHeight, pipeInsideRadius-global_clearance, pipeInsideRadius-global_clearance);
-		translate([0, pipeInsideRadius/4, -1])
+		translate([0, wireHoleOffset, -1])
 			cylinder(pipeInsideHeight+2, wireHoleRadius, wireHoleRadius);
 	    }
 	    translate([0, motorPlatformOffset, (motorPlatformLength+pipeInsideHeight)/2])
