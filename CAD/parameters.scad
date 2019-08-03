@@ -160,3 +160,10 @@ bearing_outer_diameter = 10.2;    // Rozměr B1 v nákresu s přídavkem na tole
 bearing_thickness = 4;        // Rozměr B2 v nákresu
 //bearing_shaft_length = 19.5;    // Rozměr B3 v nákresu, Originalni hodnota 19.5
 bearing_shaft_length = 20;    // Rozměr B3 v nákresu
+
+//servo lever
+servo_lever_length = 15;
+servo_gear_diameter = 4.1;
+servo_gear_height = 2.5;
+lever_hole_diameter = 1.95;
+lever_thickness = 2;
