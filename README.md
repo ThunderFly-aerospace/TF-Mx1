@@ -19,11 +19,10 @@ The ejecting water cools down the multitopter systems and improving safety.
 
 ![Fire engine high-pressure source](/doc/img/high_pressure_water_source.jpg)
 
-The water supply hose parameters
+The water supply parameters (high-pressure hose)
 
-    * Working pressure: 4 Mpa
-    * Test pressure: 6 Mpa
-    * Destructive pressure: 12 Mpa
-    * Inner diameter: 25mm
-    * Weight density: 270g/m
-
+  * Working pressure: 4 Mpa
+  * Test pressure: 6 Mpa
+  * Destructive pressure: 12 Mpa
+  * Inner diameter: 25mm
+  * Weight density: 270g/m
